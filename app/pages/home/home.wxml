@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="card hero">
+    <view class="row">
+      <view>
+        <view class="eyebrow">?????</view>
+        <view class="title">{{pet.name || '????'}}</view>
+        <view class="muted">{{pet.species}} ? {{pet.breed || '????'}} ? {{summaryText}}</view>
+      </view>
+      <view class="avatar">{{pet.avatar || '??'}}</view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="row">
+      <view>
+        <view class="eyebrow">????</view>
+        <view class="h2">???? {{percent}}%</view>
+      </view>
+      <view class="pill">{{doneCount}}/{{totalCount}}</view>
+    </view>
+    <view class="list" style="margin-top:24rpx;">
+      <view wx:for="{{checkins}}" wx:key="id" class="item check-row" bindtap="toggleCheckin" data-id="{{item.id}}">
+        <view>
+          <view class="item-title">{{item.icon}} {{item.title}}</view>
+          <view class="item-sub">{{item.done ? '???' : '???'}}</view>
+        </view>
+        <view class="checkbox-dot {{item.done ? 'done' : ''}}">{{item.done ? '?' : ''}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">??????</view>
+    <view wx:if="{{records.length}}" class="list">
+      <view wx:for="{{records}}" wx:key="id" class="item">
+        <view class="item-title">{{item.type}}</view>
+        <view class="item-sub">{{item.createdAt}} ? {{item.content}}</view>
+      </view>
+    </view>
+    <view wx:else class="empty">????????????????????</view>
+  </view>
+</view>

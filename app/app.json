@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/pets/pets",
+    "pages/records/records",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "navigationBarTitleText": "???",
+    "navigationBarBackgroundColor": "#fff8ed",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f3eadf",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#a89585",
+    "selectedColor": "#8f6545",
+    "backgroundColor": "#fffaf2",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/home/home", "text": "??" },
+      { "pagePath": "pages/pets/pets", "text": "??" },
+      { "pagePath": "pages/records/records", "text": "??" },
+      { "pagePath": "pages/profile/profile", "text": "??" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

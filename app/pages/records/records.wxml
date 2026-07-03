@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="card hero">
+    <view class="eyebrow">????</view>
+    <view class="title">??????</view>
+    <view class="muted">??????????????????????</view>
+  </view>
+
+  <view class="card">
+    <view class="form">
+      <input class="input" placeholder="??????????" value="{{form.type}}" data-field="type" bindinput="onInput" />
+      <textarea class="textarea" placeholder="????????" value="{{form.content}}" data-field="content" bindinput="onInput"></textarea>
+      <button class="btn" bindtap="addRecord">????</button>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">????</view>
+    <view wx:if="{{records.length}}" class="list">
+      <view wx:for="{{records}}" wx:key="id" class="item">
+        <view class="item-title">{{item.type}}</view>
+        <view class="item-sub">{{item.createdAt}} ? {{item.petName}}</view>
+        <view class="item-sub">{{item.content}}</view>
+      </view>
+    </view>
+    <view wx:else class="empty">??????</view>
+  </view>
+</view>

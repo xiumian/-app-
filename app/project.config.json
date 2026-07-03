@@ -1,0 +1,15 @@
+{
+  "appid": "wxaa9ccc1b0692f2e8",
+  "projectname": "pet-companion-miniprogram",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "latest",
+  "srcMiniprogramRoot": "./",
+  "condition": {}
+}
