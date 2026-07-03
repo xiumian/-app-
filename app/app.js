@@ -1,14 +1,3 @@
-const { createInitialState, loadState, saveState } = require('./utils/store');
-
-App({
-  globalData: {
-    state: createInitialState()
-  },
-  onLaunch() {
-    this.globalData.state = loadState();
-  },
-  save(nextState) {
-    this.globalData.state = nextState;
-    saveState(nextState);
-  }
-});
+// Legacy entry kept for direct script users. The production app now uses
+// ./src/main.js as an ES module entry from index.html.
+import './src/main.js';

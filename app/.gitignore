@@ -1,11 +1,12 @@
-node_modules/
-miniprogram_npm/
-dist/
-output/
+# local runtime data
+server-data
+output
 *.log
-.env
-*.env
-*.key
-*.pem
-*.p12
-project.private.config.json
+
+# production deployment secrets and certificates
+deploy/production.env
+deploy/certs/
+deploy/target.json
+
+# dependency/cache folders
+node_modules
