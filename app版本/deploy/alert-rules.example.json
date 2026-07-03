@@ -1,0 +1,36 @@
+{
+  "service": "pet-companion",
+  "version": "0.4.0",
+  "evaluationWindowMinutes": 5,
+  "routes": {
+    "app": "https://app.your-real-domain.cn",
+    "api": "https://api.your-real-domain.cn",
+    "monitoring": "https://monitoring.your-real-domain.cn/events"
+  },
+  "alerts": [
+    {
+      "id": "api-not-ready",
+      "severity": "critical",
+      "condition": "GET /ready is not 200 or body.ok is not true for 2 consecutive checks",
+      "runbook": "docs/operations.md#api-not-ready"
+    },
+    {
+      "id": "frontend-runtime-config-invalid",
+      "severity": "critical",
+      "condition": "runtime-config.js is not production or API_MOCK_FALLBACK is not false",
+      "runbook": "docs/operations.md#frontend-runtime-config-invalid"
+    },
+    {
+      "id": "latency-slo-breach",
+      "severity": "warning",
+      "condition": "ops check p95 latency exceeds PET_OPS_MAX_LATENCY_MS for 3 windows",
+      "runbook": "docs/operations.md#latency-slo-breach"
+    },
+    {
+      "id": "monitoring-ingest-failed",
+      "severity": "warning",
+      "condition": "POST /monitoring/events fails for 2 consecutive checks",
+      "runbook": "docs/operations.md#monitoring-ingest-failed"
+    }
+  ]
+}

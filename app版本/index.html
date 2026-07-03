@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6b86b" />
+  <meta name="description" content="宠伴记是一款暖色系宠物健康管理、日常打卡、提醒和成长记录 H5/PWA。" />
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./assets/icon.svg" />
+  <title>宠伴记 - 宠物健康管理与轻社区</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#app">跳到主要内容</a>
+  <main id="app" tabindex="-1"></main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script>
+    (function clearLocalDevPwaCache() {
+      var localHosts = ['localhost', '127.0.0.1', '::1'];
+      if (!localHosts.includes(location.hostname)) return;
+      if (!('serviceWorker' in navigator)) return;
+      if (sessionStorage.getItem('pet-companion-local-sw-cleared') === '1') return;
+      Promise.all([
+        navigator.serviceWorker.getRegistrations().then(function (registrations) {
+          return Promise.all(registrations.map(function (registration) { return registration.unregister(); }));
+        }),
+        window.caches && caches.keys ? caches.keys().then(function (keys) {
+          return Promise.all(keys.filter(function (key) { return key.indexOf('pet-companion-') === 0; }).map(function (key) { return caches.delete(key); }));
+        }) : Promise.resolve()
+      ]).then(function () {
+        sessionStorage.setItem('pet-companion-local-sw-cleared', '1');
+        location.reload();
+      }).catch(function () {
+        sessionStorage.setItem('pet-companion-local-sw-cleared', '1');
+      });
+    }());
+  </script>
+  <script src="./runtime-config.js"></script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

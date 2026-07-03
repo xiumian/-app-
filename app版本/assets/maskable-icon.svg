@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="宠伴记安全区图标">
+  <rect width="512" height="512" fill="#f3d6ad"/>
+  <circle cx="256" cy="256" r="182" fill="#fff8ef"/>
+  <circle cx="256" cy="266" r="130" fill="#f6b86b"/>
+  <circle cx="213" cy="238" r="23" fill="#6f503c"/>
+  <circle cx="299" cy="238" r="23" fill="#6f503c"/>
+  <path d="M218 307c24 21 52 21 76 0" fill="none" stroke="#6f503c" stroke-width="20" stroke-linecap="round"/>
+  <path d="M185 173l-24-42 50 23M327 173l24-42-50 23" fill="#f6b86b" stroke="#6f503c" stroke-width="16" stroke-linejoin="round"/>
+</svg>
